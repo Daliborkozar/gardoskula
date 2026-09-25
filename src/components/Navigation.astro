@@ -1,0 +1,223 @@
+---
+import { translations, localeInfo } from '../data/translations.js';
+
+const { locale = 'en' } = Astro.props;
+const t = translations[locale] ?? translations.en;
+
+const links = [
+  { name: t.nav.home, href: `/${locale}` },
+  { name: t.nav.about, href: `/${locale}/about` },
+  { name: t.nav.visit, href: `/${locale}/visit` },
+  { name: t.nav.gallery, href: `/${locale}/gallery` },
+  { name: t.nav.contact, href: `/${locale}/contact` },
+];
+
+const languages = Object.entries(localeInfo).map(([code, info]) => ({ code, label: info.label }));
+---
+
+<style>
+  nav {
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  .nav-menu a {
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-menu a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  .language-switcher {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .language-switcher a {
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+
+  .language-switcher a.active,
+  .language-switcher a:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+  }
+
+  .language-select {
+    display: none;
+    background-color: white;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: var(--text-dark);
+    padding: 0.65rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .language-select option {
+    color: var(--text-dark);
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+  }
+
+  @media (max-width: 992px) {
+    .language-switcher {
+      display: none;
+    }
+
+    .language-select {
+      display: inline-block;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      background-color: var(--secondary-color);
+      padding: 1rem 0;
+      border-top: 2px solid var(--primary-color);
+    }
+
+    .nav-menu.active {
+      display: flex;
+    }
+
+    .nav-menu li {
+      padding: 0.75rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">🏰 Kula Gardos</div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      {links.map((link) => (
+        <li>
+          <a href={link.href}>{link.name}</a>
+        </li>
+      ))}
+    </ul>
+    <div class="language-switcher">
+      {languages.map((language) => (
+        <a
+          href={`/${language.code}`}
+          class={language.code === locale ? 'active' : ''}
+        >
+          {language.label}
+        </a>
+      ))}
+    </div>
+    <select class="language-select" id="languageSelect" aria-label="Select language">
+      {languages.map((language) => (
+        <option value={language.code} selected={language.code === locale}>
+          {language.label}
+        </option>
+      ))}
+    </select>
+  </div>
+</nav>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  }
+
+  const languageSelect = document.getElementById('languageSelect');
+  if (languageSelect) {
+    languageSelect.addEventListener('change', (event) => {
+      const selectedLang = event.target.value;
+      const path = window.location.pathname;
+      const pathParts = path.split('/').filter(Boolean);
+      if (pathParts.length === 0 || !pathParts[0] || !pathParts[0].match(/^[a-z]{2}$/i)) {
+        window.location.href = `/${selectedLang}`;
+        return;
+      }
+      pathParts[0] = selectedLang;
+      window.location.href = `/${pathParts.join('/')}`;
+    });
+  }
+</script>

@@ -1,0 +1,77 @@
+---
+import { translations } from '../data/translations.js';
+
+const currentYear = new Date().getFullYear();
+const { locale = 'en' } = Astro.props;
+const t = translations[locale] ?? translations.en;
+---
+
+<style>
+  footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .footer-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+
+  .footer-section p, .footer-section a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section a:hover {
+    color: var(--primary-color);
+  }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>🏰 Kula Gardos</h3>
+      <p>{t.footer.contact}</p>
+    </div>
+    <div class="footer-section">
+      <h3>{t.nav.visit}</h3>
+      <p>{t.footer.hours}</p>
+    </div>
+    <div class="footer-section">
+      <h3>{t.nav.contact}</h3>
+      <p>📍 Grobljanska bb, Zemun</p>
+      <p>📞 +381 11 619 01 69</p>
+      <p>✉️ info@gardos.rs</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; {currentYear} Kula Gardos. {t.footer.copyright}</p>
+  </div>
+</footer>

@@ -1,17 +1,96 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import { locales, localeInfo, translations } from '../data/translations.js';
 
+const t = translations.en;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Kula Gardos" description="Choose your language for the website." locale="en">
+  <style>
+    .selector {
+      max-width: 1000px;
+      margin: 5rem auto 2rem;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    .selector h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: var(--secondary-color);
+    }
+
+    .selector p {
+      margin: 0 auto 2.5rem;
+      max-width: 680px;
+      color: var(--text-light);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .language-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 0 auto;
+    }
+
+    .language-card {
+      background-color: var(--light-bg);
+      border-radius: 16px;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .language-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .language-card a {
+      display: block;
+      color: var(--secondary-color);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .language-card p {
+      color: var(--text-light);
+      margin: 0;
+    }
+
+    .note {
+      margin-top: 3rem;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .selector h1 {
+        font-size: 2rem;
+      }
+
+      .selector p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <section class="selector">
+    <h1>{t.languageSelector.title}</h1>
+    <p>{t.languageSelector.subtitle}</p>
+
+    <div class="language-grid">
+      {locales.map((lang) => (
+        <article class="language-card">
+          <a href={`/${lang}`}>{localeInfo[lang].label}</a>
+          <p>{localeInfo[lang].label} version of the site</p>
+        </article>
+      ))}
+    </div>
+
+    <p class="note">You can also switch languages from any page using the language menu in the header.</p>
+  </section>
+</Layout>

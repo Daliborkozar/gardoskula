@@ -1,0 +1,178 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="About Kula Gardos"
+  description="Learn about the history and significance of Kula Gardos fortress in Zemun, Serbia"
+>
+  <style>
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    .timeline {
+      margin: 3rem 0;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--primary-color);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-year {
+      color: var(--accent-color);
+      font-weight: bold;
+      font-size: 1.3rem;
+      min-width: 80px;
+    }
+
+    .timeline-content p {
+      margin-bottom: 0.5rem;
+    }
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+      background-color: var(--light-bg);
+      padding: 2rem;
+      border-radius: 8px;
+    }
+
+    .fact-box {
+      text-align: center;
+    }
+
+    .fact-number {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+
+    .fact-label {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-item {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .timeline-year {
+        min-width: auto;
+      }
+    }
+  </style>
+
+  <div class="content">
+    <h1>About Kula Gardos</h1>
+    
+    <h2>History & Significance</h2>
+    <p>
+      Kula Gardos stands as one of Serbia's most iconic landmarks, a yellow fortress that has watched over the Danube for more than a century. Its distinctive silhouette is recognized worldwide as the symbol of Zemun, a historic town known for its cultural heritage and picturesque riverside location.
+    </p>
+    <p>
+      The fortress represents a remarkable piece of Austro-Hungarian architecture and represents an important period in Central European history. Its strategic location on the Gardos Hill has made it a key vantage point throughout the ages.
+    </p>
+
+    <div class="facts-grid">
+      <div class="fact-box">
+        <div class="fact-number">35m</div>
+        <div class="fact-label">Height of Gardos Hill</div>
+      </div>
+      <div class="fact-box">
+        <div class="fact-number">1882</div>
+        <div class="fact-label">Year Built</div>
+      </div>
+      <div class="fact-box">
+        <div class="fact-number">360°</div>
+        <div class="fact-label">Panoramic Views</div>
+      </div>
+      <div class="fact-box">
+        <div class="fact-number">25m</div>
+        <div class="fact-label">Tower Height</div>
+      </div>
+    </div>
+
+    <h2>Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">1882</div>
+        <div class="timeline-content">
+          <h3>Construction Completed</h3>
+          <p>Kula Gardos is officially built on Gardos Hill as a symbol of the Serbian capital's resilience following the Austro-Hungarian occupation.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">Early 1900s</div>
+        <div class="timeline-content">
+          <h3>Becoming an Icon</h3>
+          <p>The fortress quickly becomes a recognizable landmark and tourist destination for visitors to the region.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1940s-1950s</div>
+        <div class="timeline-content">
+          <h3>Post-War Period</h3>
+          <p>Following World War II, the fortress undergoes maintenance and continues to serve as an important historical monument.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1960s-1980s</div>
+        <div class="timeline-content">
+          <h3>Preservation Era</h3>
+          <p>Major restoration efforts ensure the fortress is preserved for future generations while opening it for public tours.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1991-2000s</div>
+        <div class="timeline-content">
+          <h3>Modern Restoration</h3>
+          <p>Comprehensive renovations modernize the fortress facilities while maintaining historical integrity.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">Today</div>
+        <div class="timeline-content">
+          <h3>Premier Tourist Destination</h3>
+          <p>Kula Gardos remains one of Serbia's most visited landmarks, attracting thousands of visitors annually from around the world.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Architectural Features</h2>
+    <p>
+      The fortress showcases classic Austro-Hungarian military architecture with its distinctive yellow brick construction. The main tower, standing 25 meters tall, provides commanding views and serves as the iconic centerpiece of the fortress complex. The structure includes various observation points, historically accurate exhibits, and well-maintained walking paths.
+    </p>
+    <p>
+      The fortress combines functionality with aesthetic appeal, featuring restoration work that maintains historical authenticity while providing modern visitor amenities. The architectural design reflects the building techniques and materials characteristic of 19th-century Central European fortifications.
+    </p>
+
+    <h2>Cultural Importance</h2>
+    <p>
+      Beyond its architectural significance, Kula Gardos holds deep cultural meaning for Zemun and Serbia. It represents a symbol of local pride and has been featured in countless artworks, photographs, and media. The fortress is frequently used as the backdrop for cultural events and celebrations throughout the year.
+    </p>
+    <p>
+      For many visitors, seeing Kula Gardos is synonymous with experiencing authentic Danube River culture and understanding the rich historical tapestry of Central Europe.
+    </p>
+  </div>
+</Layout>

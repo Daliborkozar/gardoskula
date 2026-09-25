@@ -1,0 +1,111 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { locales, translations } from '../../data/translations.js';
+
+export async function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang ?? 'en';
+const t = translations[lang] ?? translations.en;
+---
+
+<Layout locale={lang} title={t.about.title} description={t.meta.description}>
+  <style>
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    .timeline {
+      margin: 3rem 0;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--primary-color);
+    }
+
+    .timeline-year {
+      color: var(--accent-color);
+      font-weight: bold;
+      font-size: 1.3rem;
+      min-width: 90px;
+    }
+
+    .timeline-content p {
+      margin-bottom: 0.75rem;
+    }
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+      background-color: var(--light-bg);
+      padding: 2rem;
+      border-radius: 16px;
+    }
+
+    .fact-box {
+      text-align: center;
+    }
+
+    .fact-number {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+
+    .fact-label {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-item {
+        flex-direction: column;
+      }
+    }
+  </style>
+
+  <div class="content">
+    <h1>{t.about.title}</h1>
+    <h2>{t.about.historyHeading}</h2>
+    <p>{t.about.historyIntro1}</p>
+    <p>{t.about.historyIntro2}</p>
+
+    <div class="facts-grid">
+      {t.about.facts.map((fact) => (
+        <div class="fact-box">
+          <div class="fact-number">{fact.number}</div>
+          <div class="fact-label">{fact.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <h2>{t.about.timelineHeading}</h2>
+    <div class="timeline">
+      {t.about.timeline.map((item) => (
+        <div class="timeline-item">
+          <div class="timeline-year">{item.year}</div>
+          <div class="timeline-content">
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <h2>{t.about.architectureHeading}</h2>
+    <p>{t.about.architectureText}</p>
+
+    <h2>{t.about.culturalHeading}</h2>
+    <p>{t.about.culturalText}</p>
+  </div>
+</Layout>

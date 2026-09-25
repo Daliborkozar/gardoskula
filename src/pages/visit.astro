@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Visit Information"
+  description="Plan your visit to Kula Gardos with hours, admission prices, and helpful travel tips"
+>
+  <style>
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .info-card {
+      background: linear-gradient(135deg, var(--light-bg), white);
+      padding: 2rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary-color);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+      color: var(--accent-color);
+    }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .hours-table th,
+    .hours-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--primary-color);
+    }
+
+    .hours-table th {
+      background-color: var(--secondary-color);
+      color: white;
+      font-weight: bold;
+    }
+
+    .hours-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-list {
+      list-style: none;
+      margin: 1rem 0;
+    }
+
+    .price-list li {
+      padding: 0.75rem 0;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--primary-color);
+    }
+
+    .price-list li:last-child {
+      border-bottom: none;
+    }
+
+    .price {
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+
+    .tip-box {
+      background-color: #e8f4f8;
+      border-left: 4px solid var(--accent-color);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .tip-box strong {
+      color: var(--accent-color);
+    }
+
+    .location-info {
+      background-color: var(--light-bg);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    .contact-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .contact-item {
+      padding: 1rem;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .hours-table th,
+      .hours-table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+
+  <div class="content">
+    <h1>Visit Kula Gardos</h1>
+    
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>⏰ Opening Hours</h3>
+        <p>
+          <strong>Summer:</strong> 8:00 - 20:00<br>
+          <strong>Winter:</strong> 9:00 - 17:00<br>
+          <strong>Holidays:</strong> 9:00 - 17:00
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>🎫 Admission</h3>
+        <p>
+          <strong>Adults:</strong> €3.00<br>
+          <strong>Students/Seniors:</strong> €1.50<br>
+          <strong>Children (under 7):</strong> Free<br>
+          <strong>Groups (20+):</strong> Special rates
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>📍 Location</h3>
+        <p>
+          Gardos Hill<br>
+          Grobljanska bb<br>
+          Zemun, Belgrade<br>
+          Serbia
+        </p>
+      </div>
+    </div>
+
+    <h2>Getting There</h2>
+    <p>
+      Kula Gardos is easily accessible from central Zemun. Located at the top of Gardos Hill, the fortress can be reached by:
+    </p>
+    <ul style="margin-left: 2rem; color: var(--text-light);">
+      <li><strong>On foot:</strong> Pleasant 10-15 minute walk from Zemun's main square</li>
+      <li><strong>By car:</strong> Parking available near the base of the hill</li>
+      <li><strong>By public transport:</strong> Multiple bus lines serve the area</li>
+    </ul>
+
+    <div class="tip-box">
+      <strong>💡 Tip:</strong> The walk up to the fortress is relatively easy, but comfortable shoes are recommended. The pathways are well-maintained and offer beautiful views even as you climb.
+    </div>
+
+    <h2>What to See & Do</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>🏰 Tower Climb</h3>
+        <p>Ascend the main tower for unforgettable 360-degree views of the Danube, the city, and surrounding regions.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>📚 Exhibits</h3>
+        <p>Learn about the fortress's history and Austro-Hungarian heritage through informative displays and artifacts.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>📸 Photography</h3>
+        <p>Capture stunning photos from various vantage points throughout the day, especially during sunset.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>🥾 Walking Paths</h3>
+        <p>Explore scenic walking paths around the fortress complex with information panels about the surroundings.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>🌅 Panoramic Views</h3>
+        <p>Enjoy views of Barracks Island, New Danube, and the Hungarian plains from the observation areas.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>☕ Refreshments</h3>
+        <p>Several cafés and restaurants nearby offer traditional Serbian and Austro-Hungarian cuisine.</p>
+      </div>
+    </div>
+
+    <h2>Visitor Guidelines</h2>
+    <ul style="margin-left: 2rem; color: var(--text-light); line-height: 2;">
+      <li>Respectful behavior is expected in this historical site</li>
+      <li>Photography is permitted for personal use</li>
+      <li>Stay within marked pathways for your safety</li>
+      <li>Guide dogs are welcome; keep pets under control</li>
+      <li>Bring water and sun protection during summer months</li>
+      <li>Dress appropriately for the season and weather</li>
+    </ul>
+
+    <div class="tip-box">
+      <strong>🎒 What to Bring:</strong> Comfortable shoes, camera, water bottle, sunscreen, and a light jacket. Summer can be quite warm on the exposed hilltop.
+    </div>
+
+    <div class="location-info">
+      <h2 style="margin-top: 0;">Contact & Information</h2>
+      <div class="contact-details">
+        <div class="contact-item">
+          <strong>📞 Phone</strong>
+          +381 11 619 01 69
+        </div>
+        <div class="contact-item">
+          <strong>✉️ Email</strong>
+          info@gardos.rs
+        </div>
+        <div class="contact-item">
+          <strong>🌐 Website</strong>
+          www.gardos.rs
+        </div>
+        <div class="contact-item">
+          <strong>📍 Address</strong>
+          Grobljanska bb, Zemun
+        </div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>⚠️ Note:</strong> Hours and admission prices may vary seasonally. We recommend calling ahead or checking the official website for the most current information before your visit.
+    </div>
+  </div>
+</Layout>
