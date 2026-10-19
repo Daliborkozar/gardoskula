@@ -70,7 +70,7 @@ export const translations = {
     visit: {
       title: 'Visit Information',
       openingHeading: 'Opening Hours',
-      openingDetails: 'Summer: 8:00 - 20:00 | Winter: 9:00 - 17:00 | Holidays: 9:00 - 17:00',
+      openingDetails: 'Every day: 10:00 - 17:00',
       admissionHeading: 'Admission',
       admissionDetails: [
         { label: 'Adults', value: '€3.00' },
@@ -107,7 +107,7 @@ export const translations = {
       email: 'info@gardos.rs',
       website: 'www.gardos.rs',
       address: 'Grobljanska bb, Zemun',
-      note: 'Hours and admission prices may vary seasonally. Call ahead for the latest information.',
+      note: 'The gallery cannot be visited in rain or snow. Admission prices may vary; please call ahead for the latest information.',
     },
     gallery: {
       title: 'Gallery',
@@ -178,16 +178,16 @@ export const translations = {
     },
     languageSelector: {
       title: 'Изаберите језик',
-      subtitle: 'Одаберите језик за веб сајт Куле Гарде.',
+      subtitle: 'Одаберите језик за веб-сајт Куле Гардош.',
       button: 'Уђи на сајт',
     },
     home: {
-      heroTitle: 'Добродошли у Кулу Гарде',
+      heroTitle: 'Добродошли у Кулу Гардош',
       heroSubtitle: 'Откријте познату тврђаву са погледом на Дунав у Земуну.',
       visitButton: 'Планирајте посету',
-      aboutHeading: 'О Кули Гарде',
-      aboutIntro1: 'Кула Гарде, позната и као Гарде куле, је изванредна тврђава из 19. века на 35 метара високом брду изнад Дунава.',
-      aboutIntro2: 'Изграђена 1882. године, ова жута тврђава постала је симбол Земуна и једна од најпознатијих знаменитости у Србији.',
+      aboutHeading: 'О Кули Гардош',
+      aboutIntro1: 'Кула Гардош, позната и као Миленијумска кула, један је од најпрепознатљивијих симбола Земуна. Налази се на брду Гардош, са погледом на Дунав.',
+      aboutIntro2: 'Изграђена је 1896. године у част хиљадугодишњице доласка Мађара у Панонску низију и данас је једна од најпознатијих знаменитости у Србији.',
       whyHeading: 'Зашто посетити',
       features: [
         { icon: '🏛️', title: 'Историјска знаменитост', description: 'Истражите преко 140 година историје и Аустроугарско наслеђе.' },
@@ -196,36 +196,36 @@ export const translations = {
         { icon: '🚶', title: 'Шетње', description: 'Прошетајте кроз тврђаву и лепо уређене стазе.' },
       ],
       ctaHeading: 'Спремни за откривање?',
-      ctaText: 'Сазнајте о сатима посете, ценама уласка и искористите посету Кули Гарде.',
+      ctaText: 'Сазнајте више о радном времену, ценама улазница и планирајте посету Кули Гардош.',
     },
     about: {
-      title: 'О Кули Гарде',
+      title: 'О Кули Гардош',
       historyHeading: 'Историја и значај',
-      historyIntro1: 'Кула Гарде је један од најпознатијих симбола Србије, жута тврђава која чува Дунав више од века.',
-      historyIntro2: 'Тврђава је важан пример аустроугарске архитектуре и важан период у историји централне Европе.',
+      historyIntro1: 'Кула Гардош је једна од најпознатијих знаменитости Земуна. Изграђена је крајем 19. века на истоименом брду и пружа поглед на Дунав.',
+      historyIntro2: 'Њена архитектура сведочи о историјском наслеђу Земуна и његовим везама са Аустроугарском.',
       facts: [
-        { number: '35м', label: 'Висина брда Гарде' },
-        { number: '1882', label: 'Година изградње' },
+        { number: '35м', label: 'Висина брда Гардош' },
+        { number: '1896', label: 'Година изградње' },
         { number: '360°', label: 'Панорамски погледи' },
         { number: '25м', label: 'Висина куле' },
       ],
       timelineHeading: 'Хронологија',
       timeline: [
-        { year: '1882', title: 'Завршетак изградње', description: 'Кула Гарде званично је изграђена на брду Гарде као симбол отпора.' },
+        { year: '1896', title: 'Завршетак изградње', description: 'Кула Гардош је завршена и постала један од симбола Земуна.' },
         { year: 'почетак 1900-их', title: 'Постала икона', description: 'Тврђава постаје препознатљива знаменитост и туристичка дестинација.' },
         { year: '1940-1950', title: 'Послератни период', description: 'Тврђава пролази кроз одржавање и очување.' },
         { year: '1960-1980', title: 'Ера очувања', description: 'Рестаурација обезбеђује очување за будуће генерације.' },
-        { year: 'Данас', title: 'Туристичка дестинација', description: 'Кула Гарде остаје једна од најпосећенијих знаменитости Србије.' },
+        { year: 'Данас', title: 'Туристичка дестинација', description: 'Кула Гардош и данас је једна од најпознатијих знаменитости Земуна.' },
       ],
       architectureHeading: 'Архитектонске карактеристике',
       architectureText: 'Тврђава има класичну аустроугарску војну архитектуру и жуту фасаду која се истиче.',
       culturalHeading: 'Културни значај',
-      culturalText: 'Кула Гарде је омиљени симбол Земуна, често присутан у медијима и културним догађањима.',
+      culturalText: 'Кула Гардош је омиљени симбол Земуна и често је место културних догађаја.',
     },
     visit: {
       title: 'Информације за посету',
       openingHeading: 'Радно време',
-      openingDetails: 'Лето: 8:00 - 20:00 | Зима: 9:00 - 17:00 | Празници: 9:00 - 17:00',
+      openingDetails: 'Сваког дана: 10:00 - 17:00',
       admissionHeading: 'Улазнице',
       admissionDetails: [
         { label: 'Одрасли', value: '€3.00' },
@@ -234,9 +234,9 @@ export const translations = {
         { label: 'Групе (20+)', value: 'Посебне цене' },
       ],
       locationHeading: 'Локација',
-      locationText: 'Брдо Гарде, Вандорова улица, Земун, Београд, Србија',
+      locationText: 'Брдо Гардош, Земун, Београд, Србија',
       travelHeading: 'Како доћи',
-      travelText: 'Кула Гарде је лако доступна из центра Земуна пешке, аутом или градским превозом.',
+      travelText: 'До Куле Гардош се лако стиже из центра Земуна пешке, аутомобилом или градским превозом.',
       tipsHeading: 'Савети за посетиоце',
       tipsText: 'Препоручују се удобне ципеле за шетњу уз брдо. Понесите воду и заштиту од сунца лети.',
       activitiesHeading: 'Шта видети и радити',
@@ -262,7 +262,7 @@ export const translations = {
       email: 'info@gardos.rs',
       website: 'www.gardos.rs',
       address: 'Вандорова 1, Земун',
-      note: 'Радно време и цене могу да варирају. Позовите пре доласка за најновије информације.',
+      note: 'У случају кише или снега, посета галерији није могућа. Цене улазница могу да варирају; позовите пре доласка за најновије информације.',
     },
     gallery: {
       title: 'Галерија',
@@ -380,7 +380,7 @@ export const translations = {
     visit: {
       title: 'Информация для посетителей',
       openingHeading: 'Часы работы',
-      openingDetails: 'Лето: 8:00 - 20:00 | Зима: 9:00 - 17:00 | Праздники: 9:00 - 17:00',
+      openingDetails: 'Ежедневно: 10:00 - 17:00',
       admissionHeading: 'Входной билет',
       admissionDetails: [
         { label: 'Взрослые', value: '€3.00' },
@@ -417,7 +417,7 @@ export const translations = {
       email: 'info@gardos.rs',
       website: 'www.gardos.rs',
       address: 'Вándорова 1, Земун',
-      note: 'Часы работы и цены могут изменяться. Звоните заранее для актуальной информации.',
+      note: 'В дождь или снег посещение галереи невозможно. Стоимость билетов может меняться; уточняйте актуальную информацию заранее.',
     },
     gallery: {
       title: 'Галерея',
@@ -535,7 +535,7 @@ export const translations = {
     visit: {
       title: 'Ziyaret bilgileri',
       openingHeading: 'Çalışma saatleri',
-      openingDetails: 'Yaz: 8:00 - 20:00 | Kış: 9:00 - 17:00 | Tatiller: 9:00 - 17:00',
+      openingDetails: 'Her gün: 10:00 - 17:00',
       admissionHeading: 'Giriş ücretleri',
       admissionDetails: [
         { label: 'Yetişkin', value: '€3.00' },
@@ -572,7 +572,7 @@ export const translations = {
       email: 'info@gardos.rs',
       website: 'www.gardos.rs',
       address: 'Grobljanska bb, Zemun',
-      note: 'Saatler ve ücretler sezonluk olarak değişebilir. Güncel bilgi için arayın.',
+      note: 'Yağmur veya kar yağışı durumunda galeri ziyareti mümkün değildir. Giriş ücretleri değişebilir; güncel bilgi için önceden arayın.',
     },
     gallery: {
       title: 'Galeri',
@@ -690,7 +690,7 @@ export const translations = {
     visit: {
       title: '参观信息',
       openingHeading: '开放时间',
-      openingDetails: '夏季：8:00 - 20:00 | 冬季：9:00 - 17:00 | 节假日：9:00 - 17:00',
+      openingDetails: '每日：10:00 - 17:00',
       admissionHeading: '门票',
       admissionDetails: [
         { label: '成人', value: '€3.00' },
@@ -727,7 +727,7 @@ export const translations = {
       email: 'info@gardos.rs',
       website: 'www.gardos.rs',
       address: 'Grobljanska bb, Zeјmun',
-      note: '开放时间和门票可能会季节性变化。请提前致电确认最新信息。',
+      note: '下雨或下雪时无法参观画廊。门票价格可能会有变化，请提前致电确认最新信息。',
     },
     gallery: {
       title: '画廊',
