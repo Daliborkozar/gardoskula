@@ -20,58 +20,19 @@ import Layout from '../layouts/Layout.astro';
       margin: 2rem 0;
     }
 
-    .contact-form {
-      background-color: var(--light-bg);
-      padding: 2rem;
+    .location-map {
+      min-height: 520px;
+      overflow: hidden;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    label {
+    .location-map iframe {
       display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-      color: var(--secondary-color);
-    }
-
-    input, textarea, select {
       width: 100%;
-      padding: 0.75rem;
-      border: 1px solid var(--primary-color);
-      border-radius: 4px;
-      font-family: inherit;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-    }
-
-    input:focus, textarea:focus, select:focus {
-      outline: none;
-      border-color: var(--accent-color);
-      box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-submit {
-      background-color: var(--accent-color);
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      border: none;
-      transition: all 0.3s ease;
-      width: 100%;
-    }
-
-    .form-submit:hover {
-      background-color: var(--primary-color);
-      transform: translateY(-2px);
+      height: 100%;
+      min-height: 520px;
+      border: 0;
     }
 
     .contact-info {
@@ -170,43 +131,15 @@ import Layout from '../layouts/Layout.astro';
     </p>
 
     <div class="contact-container">
-      <form class="contact-form" method="POST" action="https://formspree.io/f/YOUR_ID">
-        <h2>Send us a Message</h2>
-        
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Phone (Optional)</label>
-          <input type="tel" id="phone" name="phone">
-        </div>
-
-        <div class="form-group">
-          <label for="subject">Subject</label>
-          <select id="subject" name="subject" required>
-            <option value="">Select a subject...</option>
-            <option value="general">General Inquiry</option>
-            <option value="group">Group Booking</option>
-            <option value="feedback">Feedback</option>
-            <option value="event">Event Inquiry</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-
-        <button type="submit" class="form-submit">Send Message</button>
-      </form>
+      <div class="location-map">
+        <iframe
+          src="https://www.google.com/maps?q=Kula+Gardo%C5%A1%2C+Zemun%2C+Belgrade%2C+Serbia&output=embed"
+          title="Google Maps location of Kula Gardoš"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
 
       <div class="contact-info">
         <div class="info-section">
@@ -224,15 +157,6 @@ import Layout from '../layouts/Layout.astro';
           <p><strong>Website:</strong> <a href="https://www.gardos.rs" target="_blank">www.gardos.rs</a></p>
         </div>
 
-        <div class="info-section">
-          <h3>🕐 Business Hours</h3>
-          <p><strong>Monday - Sunday</strong></p>
-          <p>Summer: 8:00 - 20:00</p>
-          <p>Winter: 9:00 - 17:00</p>
-          <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">
-            Hours may vary on holidays. Please call ahead to confirm.
-          </p>
-        </div>
       </div>
     </div>
 
