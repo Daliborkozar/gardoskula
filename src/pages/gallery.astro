@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import GalleryLightbox from '../components/GalleryLightbox.astro';
 import { galleryImages } from '../data/galleryImages.js';
 
 const captions = [
@@ -49,9 +50,11 @@ const galleryItems = galleryImages.map((image, index) => ({ image, caption: capt
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-weight: bold;
-      text-align: center;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: zoom-in;
     }
 
     .gallery-item::before {
@@ -90,18 +93,18 @@ const galleryItems = galleryImages.map((image, index) => ({ image, caption: capt
 
     <div class="gallery-grid">
       {galleryItems.map(({ image, caption }, index) => (
-        <div class="gallery-item">
+        <button class="gallery-item" type="button" data-gallery-image>
           <img class="gallery-image" src={`/images/gallery/${encodeURIComponent(image)}`} alt={caption ?? `Kula Gardos photo ${index + 1}`} loading="lazy" />
-        </div>
+        </button>
       ))}
     </div>
 
     <h2 style="margin-top: 4rem;">Share Your Photos</h2>
     <p>
       Have you visited Kula Gardos and captured amazing photos? We'd love to see them! 
-      Send your best pictures to <strong>info@gardos.rs</strong> with permission to display them 
+      Send your best pictures to <strong>atelje.cubrilo@gmail.com</strong> with permission to display them
       in our gallery, and we'll credit your work.
     </p>
   </div>
-
+  <GalleryLightbox />
 </Layout>

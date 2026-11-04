@@ -13,13 +13,13 @@ const t = translations[lang] ?? translations.en;
 <Layout locale={lang} title={t.meta.title} description={t.meta.description}>
   <style>
     .hero {
-      background: linear-gradient(135deg, rgba(44, 24, 16, 0.8), rgba(196, 30, 58, 0.8)),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%232c1810" width="1200" height="600"/></svg>');
+      background: linear-gradient(135deg, rgba(34, 12, 2, 0.55), rgba(106, 38, 4, 0.32)),
+        url('/images/gardos-facebook-cover.jpg');
       background-size: cover;
-      background-position: center;
+      background-position: center 35%;
       color: white;
       padding: 5rem 1rem 4rem;
-      min-height: 480px;
+      min-height: clamp(480px, 40vw, 720px);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -30,6 +30,7 @@ const t = translations[lang] ?? translations.en;
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
+      color: white;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
     }
 
@@ -99,9 +100,62 @@ const t = translations[lang] ?? translations.en;
 
     .cta h2 {
       margin-bottom: 1rem;
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+
+    .cta p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .cta .btn {
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+    }
+
+    .home-gallery {
+      max-width: 1200px;
+      margin: 1.5rem auto 0;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .home-gallery a {
+      display: block;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--light-bg);
+    }
+
+    .home-gallery img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .home-gallery a:hover img {
+      transform: scale(1.04);
+    }
+
+    .home-gallery a:focus-visible {
+      outline: 3px solid var(--accent-color);
+      outline-offset: 3px;
     }
 
     @media (max-width: 768px) {
+      .home-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .home-gallery a:last-child {
+        grid-column: span 2;
+        aspect-ratio: 2 / 1;
+      }
+
       .hero {
         padding: 3.5rem 1rem;
       }
@@ -147,5 +201,16 @@ const t = translations[lang] ?? translations.en;
     <h2>{t.home.ctaHeading}</h2>
     <p>{t.home.ctaText}</p>
     <a class="btn" href={`/${lang}/visit`}>{t.home.visitButton}</a>
+    <div class="home-gallery" aria-label={t.gallery.title}>
+      <a href={`/${lang}/gallery`} aria-label="Aerial view of Kula Gardos">
+        <img src="/images/gallery/DJI_0005.jpg" alt="Kula Gardos above the rooftops in morning fog" loading="lazy" />
+      </a>
+      <a href={`/${lang}/gallery`} aria-label="Sunset view of Kula Gardos">
+        <img src="/images/gallery/WE7N9625.jpg" alt="Sunset over Zemun viewed from Kula Gardos" loading="lazy" />
+      </a>
+      <a href={`/${lang}/gallery`} aria-label="Winter view of Kula Gardos">
+        <img src="/images/gallery/Zemun%20500x400mm.jpg" alt="Kula Gardos tower on a snowy winter day" loading="lazy" />
+      </a>
+    </div>
   </div>
 </Layout>

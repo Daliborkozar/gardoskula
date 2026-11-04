@@ -1,0 +1,80 @@
+<dialog class="gallery-lightbox" aria-label="Image preview" data-gallery-lightbox>
+  <button class="gallery-lightbox-close" type="button" aria-label="Close image preview" title="Close image preview">
+    &times;
+  </button>
+  <img src="" alt="" />
+</dialog>
+
+<style>
+  .gallery-lightbox {
+    position: fixed;
+    max-width: 94vw;
+    max-height: 90vh;
+    padding: 0;
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+
+  .gallery-lightbox::backdrop {
+    background: rgba(0, 0, 0, 0.86);
+  }
+
+  .gallery-lightbox img {
+    display: block;
+    max-width: 94vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  .gallery-lightbox-close {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    display: grid;
+    width: 2.5rem;
+    height: 2.5rem;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: white;
+    color: #222;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    .gallery-lightbox-close {
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+  }
+</style>
+
+<script>
+  const dialog = document.querySelector('[data-gallery-lightbox]');
+
+  if (dialog instanceof HTMLDialogElement) {
+    const preview = dialog.querySelector('img');
+    const closeButton = dialog.querySelector('.gallery-lightbox-close');
+
+    document.querySelectorAll('[data-gallery-image]').forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const image = trigger.querySelector('img');
+
+        if (!image || !preview) return;
+
+        preview.src = image.currentSrc || image.src;
+        preview.alt = image.alt;
+        dialog.showModal();
+      });
+    });
+
+    closeButton?.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+  }
+</script>

@@ -5,12 +5,12 @@
 }
 
 :root {
-  --primary-color: #d4a574;
-  --secondary-color: #2c1810;
-  --accent-color: #c41e3a;
-  --light-bg: #f5f1e8;
-  --text-dark: #1a1a1a;
-  --text-light: #666;
+  --primary-color: #e9d8ad;
+  --secondary-color: #6a2604;
+  --accent-color: #6a2604;
+  --light-bg: #f7f1e4;
+  --text-dark: #2f1b12;
+  --text-light: #65584a;
 }
 
 html {
@@ -22,7 +22,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: var(--text-dark);
-  background-color: #fff;
+  background-color: #fffcf6;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -80,6 +80,7 @@ button, .btn {
 
 button:hover, .btn:hover {
   background-color: var(--primary-color);
+  color: var(--secondary-color);
   transform: translateY(-2px);
 }
 

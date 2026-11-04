@@ -118,8 +118,8 @@ const t = translations[lang] ?? translations.en;
       <div>
         <div class="info-section">
           <h3>{t.contact.locationHeading}</h3>
-          <p>Gardos Hill</p>
-          <p>Grobljanska bb</p>
+          <p>{lang === 'sr' ? 'Брдо Гардош' : 'Gardos Hill'}</p>
+          <p>Grobljanska 22</p>
           <p>Zemun, Belgrade</p>
           <p>Serbia</p>
         </div>
@@ -129,15 +129,15 @@ const t = translations[lang] ?? translations.en;
           <div class="contact-detail-grid">
             <div class="contact-detail">
               <strong>📞</strong>
-              <p>{t.contact.phone}</p>
+              <p><a href="tel:+38163250133">{t.visit.phone}</a></p>
             </div>
             <div class="contact-detail">
-              <strong>✉️</strong>
-              <p>{t.contact.email}</p>
+              <strong>Facebook</strong>
+              <p><a href="https://www.facebook.com/ZemunskakulanaGardosu/" target="_blank" rel="noopener noreferrer">Facebook page</a></p>
             </div>
             <div class="contact-detail">
               <strong>🌐</strong>
-              <p>{t.contact.website}</p>
+              <p><a href={`https://${t.visit.website}`} target="_blank" rel="noopener noreferrer">{t.visit.website}</a></p>
             </div>
           </div>
         </div>
@@ -145,14 +145,5 @@ const t = translations[lang] ?? translations.en;
       </div>
     </div>
 
-    <div class="faq">
-      <h2>{t.contact.faqHeading}</h2>
-      {t.contact.faq.map((item) => (
-        <div class="faq-item">
-          <h4>❓ {item.question}</h4>
-          <p>{item.answer}</p>
-        </div>
-      ))}
-    </div>
   </div>
 </Layout>

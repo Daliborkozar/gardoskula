@@ -126,10 +126,6 @@ const t = translations[lang] ?? translations.en;
     <h2>{t.visit.travelHeading}</h2>
     <p>{t.visit.travelText}</p>
 
-    <div class="tip-box">
-      <strong>💡</strong> {t.visit.tipsText}
-    </div>
-
     <h2>{t.visit.activitiesHeading}</h2>
     <div class="info-grid">
       {t.visit.activities.map((item) => (
@@ -140,23 +136,12 @@ const t = translations[lang] ?? translations.en;
       ))}
     </div>
 
-    <h2>{t.visit.guidelinesHeading}</h2>
-    <ul style="margin-left: 1.5rem; color: var(--text-light); line-height: 1.9;">
-      {t.visit.guidelines.map((rule) => (
-        <li>{rule}</li>
-      ))}
-    </ul>
-
-    <div class="tip-box">
-      <strong>⚠️</strong> {t.visit.note}
-    </div>
-
     <div class="contact-item" style="margin-top:2rem; background-color: var(--light-bg);">
       <h3>{t.visit.contactHeading}</h3>
       <div class="contact-details">
         <div class="contact-item">
           <strong>📞</strong>
-          <p>{t.visit.phone}</p>
+          <p><a href="tel:+38163250133">{t.visit.phone}</a></p>
         </div>
         <div class="contact-item">
           <strong>✉️</strong>
