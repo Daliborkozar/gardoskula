@@ -8,6 +8,7 @@ export async function getStaticPaths() {
 
 const lang = Astro.params.lang ?? 'en';
 const t = translations[lang] ?? translations.en;
+const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=Millennium+Tower+Gardo%C5%A1+Hill+Zemun+Serbia';
 ---
 
 <Layout locale={lang} title={t.visit.title} description={t.meta.description}>
@@ -72,6 +73,10 @@ const t = translations[lang] ?? translations.en;
       margin: 1rem 0 0;
     }
 
+    .opening-details {
+      white-space: pre-line;
+    }
+
     .price-list li {
       display: flex;
       justify-content: space-between;
@@ -101,7 +106,7 @@ const t = translations[lang] ?? translations.en;
     <div class="info-grid">
       <div class="info-card">
         <h3>{t.visit.openingHeading}</h3>
-        <p>{t.visit.openingDetails}</p>
+        <p class="opening-details">{t.visit.openingDetails}</p>
         <p>{t.visit.weatherNote}</p>
       </div>
 
@@ -115,16 +120,19 @@ const t = translations[lang] ?? translations.en;
             </li>
           ))}
         </ul>
+        <p>{t.visit.ageNote}</p>
       </div>
 
       <div class="info-card">
         <h3>{t.visit.locationHeading}</h3>
         <p>{t.visit.locationText}</p>
+        <p><a href={googleMapsUrl} target="_blank" rel="noopener noreferrer">{t.visit.mapLink}</a></p>
       </div>
     </div>
 
     <h2>{t.visit.travelHeading}</h2>
     <p>{t.visit.travelText}</p>
+    <p><a href={googleMapsUrl} target="_blank" rel="noopener noreferrer">{t.visit.mapLink}</a></p>
 
     <h2>{t.visit.activitiesHeading}</h2>
     <div class="info-grid">
@@ -149,7 +157,7 @@ const t = translations[lang] ?? translations.en;
         </div>
         <div class="contact-item">
           <strong>🌐</strong>
-          <p>{t.visit.website}</p>
+          <p><a href={t.visit.website} target="_blank" rel="noopener noreferrer">www.gardos.rs</a></p>
         </div>
         <div class="contact-item">
           <strong>📍</strong>
@@ -157,5 +165,8 @@ const t = translations[lang] ?? translations.en;
         </div>
       </div>
     </div>
+
+    <h2>{t.visit.openingHeading}</h2>
+    <p class="opening-details">{t.visit.openingDetails}</p>
   </div>
 </Layout>

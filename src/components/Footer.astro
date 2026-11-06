@@ -57,7 +57,7 @@ const t = translations[locale] ?? translations.en;
 <footer>
   <div class="footer-content">
     <div class="footer-section">
-      <h3>🏰 Kula Gardos</h3>
+      <h3>🏰 {t.siteName}</h3>
     </div>
     <div class="footer-section">
       <h3>{t.nav.visit}</h3>
@@ -72,6 +72,6 @@ const t = translations[locale] ?? translations.en;
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; {currentYear} Kula Gardos. {t.footer.copyright}</p>
+    <p>&copy; {currentYear} {t.siteName}. {t.footer.copyright}</p>
   </div>
 </footer>

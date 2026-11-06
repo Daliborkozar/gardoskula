@@ -59,31 +59,8 @@ const languages = Object.entries(localeInfo).map(([code, info]) => ({ code, labe
     text-decoration: none;
   }
 
-  .language-switcher {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .language-switcher a {
-    color: white;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 0.4rem 0.8rem;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    transition: background 0.25s ease, color 0.25s ease;
-  }
-
-  .language-switcher a.active,
-  .language-switcher a:hover {
-    background: var(--primary-color);
-    color: var(--secondary-color);
-  }
-
   .language-select {
-    display: none;
+    display: inline-block;
     background-color: white;
     border: 1px solid rgba(255, 255, 255, 0.35);
     color: var(--text-dark);
@@ -111,16 +88,6 @@ const languages = Object.entries(localeInfo).map(([code, info]) => ({ code, labe
     height: 3px;
     background-color: var(--primary-color);
     border-radius: 2px;
-  }
-
-  @media (max-width: 992px) {
-    .language-switcher {
-      display: none;
-    }
-
-    .language-select {
-      display: inline-block;
-    }
   }
 
   @media (max-width: 768px) {
@@ -158,7 +125,7 @@ const languages = Object.entries(localeInfo).map(([code, info]) => ({ code, labe
 
 <nav>
   <div class="nav-container">
-    <div class="logo">🏰 Kula Gardos</div>
+    <div class="logo">🏰 {t.siteName}</div>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span>
       <span></span>
@@ -171,16 +138,6 @@ const languages = Object.entries(localeInfo).map(([code, info]) => ({ code, labe
         </li>
       ))}
     </ul>
-    <div class="language-switcher">
-      {languages.map((language) => (
-        <a
-          href={`/${language.code}`}
-          class={language.code === locale ? 'active' : ''}
-        >
-          {language.label}
-        </a>
-      ))}
-    </div>
     <select class="language-select" id="languageSelect" aria-label="Select language">
       {languages.map((language) => (
         <option value={language.code} selected={language.code === locale}>

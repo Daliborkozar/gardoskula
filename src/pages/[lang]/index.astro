@@ -56,39 +56,6 @@ const t = translations[lang] ?? translations.en;
       padding: 3rem 1rem;
     }
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.75rem;
-      margin-top: 2.5rem;
-    }
-
-    .feature-card {
-      background-color: var(--light-bg);
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-      transition: transform 0.3s ease;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .feature-card .icon {
-      font-size: 2.25rem;
-      margin-bottom: 1rem;
-    }
-
-    .feature-card h3 {
-      margin-bottom: 0.75rem;
-    }
-
-    .section-alt {
-      background-color: var(--light-bg);
-      padding: 3rem 1rem;
-    }
-
     .cta {
       text-align: center;
       background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
@@ -182,34 +149,17 @@ const t = translations[lang] ?? translations.en;
     <p>{t.home.aboutIntro2}</p>
   </div>
 
-  <div class="section-alt">
-    <div class="content">
-      <h2>{t.home.whyHeading}</h2>
-      <div class="features">
-        {t.home.features.map((feature) => (
-          <div class="feature-card">
-            <div class="icon">{feature.icon}</div>
-            <h3>{feature.title}</h3>
-            <p>{feature.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-
   <div class="cta">
     <h2>{t.home.ctaHeading}</h2>
-    <p>{t.home.ctaText}</p>
-    <a class="btn" href={`/${lang}/visit`}>{t.home.visitButton}</a>
     <div class="home-gallery" aria-label={t.gallery.title}>
-      <a href={`/${lang}/gallery`} aria-label="Aerial view of Kula Gardos">
-        <img src="/images/gallery/DJI_0005.jpg" alt="Kula Gardos above the rooftops in morning fog" loading="lazy" />
+      <a href={`/${lang}/gallery`} aria-label="Aerial view of the Millennium Tower">
+        <img src="/images/gallery/DJI_0005.jpg" alt="The Millennium Tower above the rooftops in morning fog" loading="lazy" />
       </a>
-      <a href={`/${lang}/gallery`} aria-label="Sunset view of Kula Gardos">
-        <img src="/images/gallery/WE7N9625.jpg" alt="Sunset over Zemun viewed from Kula Gardos" loading="lazy" />
+      <a href={`/${lang}/gallery`} aria-label="Sunset view of the Millennium Tower">
+        <img src="/images/gallery/WE7N9625.jpg" alt="Sunset over Zemun viewed from the Millennium Tower" loading="lazy" />
       </a>
-      <a href={`/${lang}/gallery`} aria-label="Winter view of Kula Gardos">
-        <img src="/images/gallery/Zemun%20500x400mm.jpg" alt="Kula Gardos tower on a snowy winter day" loading="lazy" />
+      <a href={`/${lang}/gallery`} aria-label="Winter view of the Millennium Tower">
+        <img src="/images/gallery/Zemun%20500x400mm.jpg" alt="The Millennium Tower on a snowy winter day" loading="lazy" />
       </a>
     </div>
   </div>
