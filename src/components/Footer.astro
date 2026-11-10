@@ -27,6 +27,13 @@ const t = translations[locale] ?? translations.en;
     margin-bottom: 1rem;
   }
 
+  .footer-logo {
+    display: block;
+    width: 110px;
+    max-width: 100%;
+    height: auto;
+  }
+
   .footer-section p, .footer-section a {
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.95rem;
@@ -57,7 +64,7 @@ const t = translations[locale] ?? translations.en;
 <footer>
   <div class="footer-content">
     <div class="footer-section">
-      <h3>🏰 {t.siteName}</h3>
+      <img class="footer-logo" src="/images/logo-atelje-cubrilo-footer.png" alt={t.siteName} />
     </div>
     <div class="footer-section">
       <h3>{t.nav.visit}</h3>
