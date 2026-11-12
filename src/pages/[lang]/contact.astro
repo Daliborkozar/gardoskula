@@ -118,10 +118,10 @@ const t = translations[lang] ?? translations.en;
       <div>
         <div class="info-section">
           <h3>{t.contact.locationHeading}</h3>
-          <p>{lang === 'sr' ? 'Брдо Гардош' : 'Gardos Hill'}</p>
+          <p>{lang === 'sr' ? 'Brdo Gardoš' : 'Gardos Hill'}</p>
           <p>Grobljanska 22</p>
-          <p>Zemun, Belgrade</p>
-          <p>Serbia</p>
+          <p>{lang === 'sr' ? 'Zemun, Beograd' : 'Zemun, Belgrade'}</p>
+          <p>{lang === 'sr' ? 'Srbija' : 'Serbia'}</p>
         </div>
 
         <div class="info-section">
@@ -133,7 +133,7 @@ const t = translations[lang] ?? translations.en;
             </div>
             <div class="contact-detail">
               <strong>Facebook</strong>
-              <p><a href="https://www.facebook.com/ZemunskakulanaGardosu/" target="_blank" rel="noopener noreferrer">Facebook page</a></p>
+              <p><a href="https://www.facebook.com/ZemunskakulanaGardosu/" target="_blank" rel="noopener noreferrer">{lang === 'sr' ? 'Zemunska kula na Gardošu' : 'Facebook page'}</a></p>
             </div>
             <div class="contact-detail">
               <strong>🌐</strong>

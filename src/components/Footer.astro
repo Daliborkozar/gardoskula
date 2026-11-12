@@ -44,6 +44,33 @@ const t = translations[locale] ?? translations.en;
     color: var(--primary-color);
   }
 
+  .facebook-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin-top: 0.5rem;
+    color: var(--primary-color) !important;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .facebook-link:hover {
+    color: white !important;
+    transform: translateY(-2px);
+  }
+
+  .facebook-link:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+  }
+
+  .facebook-link svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+
   .footer-bottom {
     max-width: 1200px;
     margin: 2rem auto 0;
@@ -76,6 +103,17 @@ const t = translations[locale] ?? translations.en;
       <p>📍 Grobljanska 22, Zemun</p>
       <p>📞 <a href="tel:+38163250133">+381 63250133</a></p>
       <p>✉️ <a href="mailto:atelje.cubrilo@gmail.com">atelje.cubrilo@gmail.com</a></p>
+      <a
+        class="facebook-link"
+        href="https://www.facebook.com/ZemunskakulanaGardosu/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook — Zemunska kula na Gardošu"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.02 10.125 11.899v-8.412H7.078v-3.487h3.047V9.414c0-3.025 1.792-4.696 4.533-4.696 1.312 0 2.686.236 2.686.236v2.976h-1.513c-1.491 0-1.956.931-1.956 1.886v2.257h3.328l-.532 3.487h-2.796v8.412C19.612 23.093 24 18.092 24 12.073z" />
+        </svg>
+      </a>
     </div>
   </div>
   <div class="footer-bottom">
