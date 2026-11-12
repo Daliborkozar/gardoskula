@@ -2,10 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Blog" description="Kula Gardos blog updates.">
+<Layout title="Exhibitions" description="Exhibitions at Kula Gardos.">
   <section class="blog-page">
-    <h1>Blog</h1>
-    <p>Content is in preparation.</p>
+    <h1>Exhibitions</h1>
+    <p>Exhibitions will be available soon.</p>
   </section>
 </Layout>
 
@@ -13,10 +13,19 @@ import Layout from '../layouts/Layout.astro';
   .blog-page {
     min-height: 45vh;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 2rem auto 0;
     padding: 5rem 1rem;
     display: grid;
     align-content: center;
     text-align: center;
+    background:
+      linear-gradient(rgba(34, 12, 2, 0.55), rgba(34, 12, 2, 0.55)),
+      url('/images/gardos-facebook-cover.jpg') center 35% / cover;
+    border-radius: 16px;
+  }
+
+  .blog-page h1,
+  .blog-page p {
+    color: white;
   }
 </style>

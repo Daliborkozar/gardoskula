@@ -22,7 +22,7 @@ export const translations = {
       about: 'About',
       visit: 'Visit',
       gallery: 'Gallery',
-      blog: 'Blog',
+      blog: 'Exhibitions',
       contact: 'Contact',
     },
     languageSelector: {
@@ -31,8 +31,8 @@ export const translations = {
       button: 'Enter site',
     },
     blog: {
-      title: 'Blog',
-      message: 'Content is in preparation.',
+      title: 'Exhibitions',
+      message: 'Exhibitions will be available soon.',
     },
     home: {
       heroTitle: 'The Millennium Tower',
@@ -158,7 +158,7 @@ export const translations = {
       about: 'À propos',
       visit: 'Visiter',
       gallery: 'Galerie',
-      blog: 'Blog',
+      blog: 'Expositions',
       contact: 'Contact',
     },
     languageSelector: {
@@ -167,8 +167,8 @@ export const translations = {
       button: 'Entrer sur le site',
     },
     blog: {
-      title: 'Blog',
-      message: 'Contenu en préparation.',
+      title: 'Expositions',
+      message: 'Les expositions seront bientôt présentées.',
     },
     home: {
       heroTitle: 'La Tour du Millénaire',
@@ -294,7 +294,7 @@ export const translations = {
       about: 'Über den Turm',
       visit: 'Besuch',
       gallery: 'Galerie',
-      blog: 'Blog',
+      blog: 'Ausstellungen',
       contact: 'Kontakt',
     },
     languageSelector: {
@@ -303,8 +303,8 @@ export const translations = {
       button: 'Website öffnen',
     },
     blog: {
-      title: 'Blog',
-      message: 'Inhalte werden vorbereitet.',
+      title: 'Ausstellungen',
+      message: 'Die Ausstellungen werden in Kürze vorgestellt.',
     },
     home: {
       heroTitle: 'Der Mileniumsturm',
@@ -566,7 +566,7 @@ export const translations = {
       about: 'О нас',
       visit: 'Посещение',
       gallery: 'Галерея',
-      blog: 'Блог',
+      blog: 'Выставки',
       contact: 'Контакты',
     },
     languageSelector: {
@@ -575,8 +575,8 @@ export const translations = {
       button: 'Войти на сайт',
     },
     blog: {
-      title: 'Блог',
-      message: 'Раздел блога готовится.',
+      title: 'Выставки',
+      message: 'Информация о выставках скоро появится.',
     },
     home: {
       heroTitle: 'Башня Тысячелетия',
@@ -702,7 +702,7 @@ export const translations = {
       about: 'Hakkında',
       visit: 'Ziyaret',
       gallery: 'Galeri',
-      blog: 'Blog',
+      blog: 'Sergiler',
       contact: 'İletişim',
     },
     languageSelector: {
@@ -711,8 +711,8 @@ export const translations = {
       button: 'Siteye gir',
     },
     blog: {
-      title: 'Blog',
-      message: 'Blog içeriği hazırlanıyor.',
+      title: 'Sergiler',
+      message: 'Sergiler yakında burada yer alacak.',
     },
     home: {
       heroTitle: 'Milenyum Kulesi',
@@ -838,7 +838,7 @@ export const translations = {
       about: '关于',
       visit: '参观',
       gallery: '画廊',
-      blog: '博客',
+      blog: '展览',
       contact: '联系',
     },
     languageSelector: {
@@ -847,8 +847,8 @@ export const translations = {
       button: '进入网站',
     },
     blog: {
-      title: '博客',
-      message: '内容正在准备中。',
+      title: '展览',
+      message: '展览内容即将上线。',
     },
     home: {
       heroTitle: '千年塔',
