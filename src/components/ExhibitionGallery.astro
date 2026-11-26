@@ -1,0 +1,71 @@
+---
+import GalleryLightbox from './GalleryLightbox.astro';
+import { exhibitionImages } from '../data/exhibitionImages.js';
+
+const { title } = Astro.props;
+---
+
+<div class="exhibition-gallery">
+  {exhibitionImages.map((image, index) => (
+    <button class="exhibition-image" type="button" data-gallery-image aria-label={`${title} ${index + 1}`}>
+      <img
+        src={`/images/izlozbeslike/${encodeURIComponent(image)}`}
+        alt={`${title} ${index + 1}`}
+        loading="lazy"
+      />
+    </button>
+  ))}
+</div>
+<GalleryLightbox />
+
+<style>
+  .exhibition-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 2rem auto;
+  }
+
+  .exhibition-image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 260px;
+    padding: 0;
+    border: 0;
+    border-radius: 18px;
+    background: transparent;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+
+  .exhibition-image:hover {
+    transform: scale(1.03);
+  }
+
+  .exhibition-image:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+  }
+
+  .exhibition-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .exhibition-gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 520px) {
+    .exhibition-gallery {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

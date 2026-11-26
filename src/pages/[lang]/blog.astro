@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ExhibitionGallery from '../../components/ExhibitionGallery.astro';
 import { locales, translations } from '../../data/translations.js';
 
 export async function getStaticPaths() {
@@ -10,30 +11,22 @@ const lang = Astro.params.lang ?? 'en';
 const t = translations[lang] ?? translations.en;
 ---
 
-<Layout locale={lang} title={t.blog.title} description={t.blog.message}>
-  <section class="blog-page">
+<Layout locale={lang} title={t.blog.title} description={`${t.blog.title} - ${t.siteName}`}>
+  <section class="exhibitions-page">
     <h1>{t.blog.title}</h1>
-    <p>{t.blog.message}</p>
+    <ExhibitionGallery title={t.blog.title} />
   </section>
 </Layout>
 
 <style>
-  .blog-page {
-    min-height: 45vh;
-    max-width: 1100px;
-    margin: 2rem auto 0;
-    padding: 5rem 1rem;
-    display: grid;
-    align-content: center;
-    text-align: center;
-    background:
-      linear-gradient(rgba(34, 12, 2, 0.55), rgba(34, 12, 2, 0.55)),
-      url('/images/gardos-facebook-cover.jpg') center 35% / cover;
-    border-radius: 16px;
+  .exhibitions-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
   }
 
-  .blog-page h1,
-  .blog-page p {
-    color: white;
+  .exhibitions-page h1 {
+    text-align: center;
+    text-transform: capitalize;
   }
 </style>
