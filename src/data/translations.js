@@ -90,7 +90,7 @@ export const translations = {
       contactHeading: 'Contact & Information',
       phone: '+381 63250133',
       email: 'atelje.cubrilo@gmail.com',
-      website: 'https://www.gardos.rs',
+      website: 'https://kulagardoš.rs',
       address: 'Grobljanska 22, Zemun',
     },
     gallery: {
@@ -226,7 +226,7 @@ export const translations = {
       contactHeading: 'Contact et renseignements',
       phone: '+381 63250133',
       email: 'atelje.cubrilo@gmail.com',
-      website: 'https://www.gardos.rs',
+      website: 'https://kulagardoš.rs',
       address: 'Grobljanska 22, Zemun',
     },
     gallery: {
@@ -362,7 +362,7 @@ export const translations = {
       contactHeading: 'Kontakt und Informationen',
       phone: '+381 63250133',
       email: 'atelje.cubrilo@gmail.com',
-      website: 'https://www.gardos.rs',
+      website: 'https://kulagardoš.rs',
       address: 'Grobljanska 22, Zemun',
     },
     gallery: {
@@ -498,7 +498,7 @@ export const translations = {
       contactHeading: 'Kontakt i informacije',
       phone: '+381 63250133',
       email: 'atelje.cubrilo@gmail.com',
-      website: 'https://www.gardos.rs',
+      website: 'https://kulagardoš.rs',
       address: 'Grobljanska 22, Zemun',
     },
     gallery: {
@@ -634,7 +634,7 @@ export const translations = {
       contactHeading: 'Контакты и информация',
       phone: '+381 63250133',
       email: 'atelje.cubrilo@gmail.com',
-      website: 'https://www.gardos.rs',
+      website: 'https://kulagardoš.rs',
       address: 'Grobljanska 22, Земун',
     },
     gallery: {
@@ -770,7 +770,7 @@ export const translations = {
       contactHeading: 'İletişim ve bilgi',
       phone: '+381 63250133',
       email: 'atelje.cubrilo@gmail.com',
-      website: 'https://www.gardos.rs',
+      website: 'https://kulagardoš.rs',
       address: 'Grobljanska 22, Zemun',
     },
     gallery: {
@@ -906,7 +906,7 @@ export const translations = {
       contactHeading: '联系方式',
       phone: '+381 63250133',
       email: 'atelje.cubrilo@gmail.com',
-      website: 'https://www.gardos.rs',
+      website: 'https://kulagardoš.rs',
       address: 'Grobljanska 22, Zemun',
     },
     gallery: {
